@@ -1,0 +1,34 @@
+.fa-eye{
+    color: blue;
+}
+
+.fa-eye:hover{
+    color: rgba(0, 0, 255, 0.39);
+}
+
+.biger{
+    font-weight: bolder;
+}
+
+.show{
+    display: block;
+}
+
+.showdown{
+    display: none;
+}
+
+.mdp{
+    display: none;
+}
+
+.postionEye{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+td{
+    position: relative;
+}
+
