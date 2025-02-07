@@ -1,4 +1,7 @@
 <?php
+
+    $title="READ";
+    include "header.php";
 // Check existence of id parameter before processing further
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
@@ -52,48 +55,34 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     exit();
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View Record</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>View Record</h1>
+                        <h1 class="title">View Record</h1>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Name</label>
                         <p class="form-control-static"><?php echo $row["name"]; ?></p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Username</label>
                         <p class="form-control-static"><?php echo $row["username"]; ?></p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Address</label>
                         <p class="form-control-static"><?php echo $row["address"]; ?></p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Salary</label>
                         <p class="form-control-static"><?php echo $row["salary"]; ?></p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Sexe</label>
                         <p class="form-control-static"><?php echo $row["sexe"]; ?></p>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group border-box mb-2 add-padding">
                         <label>Tel</label>
                         <p class="form-control-static"><?php echo $row["tel"]; ?></p>
                     </div>
@@ -102,5 +91,6 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             </div>        
         </div>
     </div>
+    <?php include "footer.php" ?>
 </body>
 </html>
