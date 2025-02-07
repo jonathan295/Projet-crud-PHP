@@ -62,27 +62,27 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                     <div class="page-header">
                         <h1 class="title">View Record</h1>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Name</label>
                         <p class="form-control-static"><?php echo $row["name"]; ?></p>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Username</label>
                         <p class="form-control-static"><?php echo $row["username"]; ?></p>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Address</label>
                         <p class="form-control-static"><?php echo $row["address"]; ?></p>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Salary</label>
                         <p class="form-control-static"><?php echo $row["salary"]; ?></p>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Sexe</label>
                         <p class="form-control-static"><?php echo $row["sexe"]; ?></p>
                     </div>
-                    <div class="form-group border-box mb-2 add-padding">
+                    <div class="form-group border-box mb-2 add-padding title">
                         <label>Tel</label>
                         <p class="form-control-static"><?php echo $row["tel"]; ?></p>
                     </div>
