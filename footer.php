@@ -18,9 +18,9 @@
                     <p class="footer-title text-lg-center color-link">Résaux Sociaux</p>
                 </div>
                 <div class="row">
-                    <a href="" class="col"><i class="fab fa-twitter"></i></a>
-                    <a href="" class="col"><i class="fab fa-facebook"></i></a>
-                    <a href="" class="col"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/?mx=2" class="col"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61551083908940" class="col"><i class="fab fa-facebook"></i></a>
+                    <a href="https://fr.linkedin.com/" class="col"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
