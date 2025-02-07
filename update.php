@@ -1,4 +1,7 @@
 <?php
+
+$title = "UPDATE";
+include "header.php";
 // Include config file
 require_once "config.php";
  
@@ -101,7 +104,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: index.php");
+                header("location: view.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -169,23 +172,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
 }
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Update Record</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
     <div class="wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid mt-4 modif-box add-padding">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
@@ -234,12 +222,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <span class="help-block"><?php echo $password_err;?></span>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <div class="row justify-content-center mt-4">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <a href="index.php" class="btn btn-default">Cancel</a>
+                        </div>
                     </form>
                 </div>
             </div>        
         </div>
     </div>
+    <?php include "footer.php"; ?>
 </body>
 </html>

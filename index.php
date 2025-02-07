@@ -1,108 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="Font-Awesome-6.x/Font-Awesome-6.x/css/all.css">
-    <link rel="stylesheet" href="index.css">
-    <style type="text/css">
-        .wrapper{
-            width: 650px;
-            margin: 0 auto;
-        }
-        .page-header h2{
-            margin-top: 0;
-        }
-        table tr td:last-child a{
-            margin-right: 15px;
-        }
-    </style>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
-                    </div>
-                    <?php
-                    // Include config file
-                    require_once "config.php";
-                    
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM employees";
-                    if($result = mysqli_query($link, $sql)){
-                        if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-bordered table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Username</th>";
-                                        echo "<th>Address</th>";
-                                        echo "<th>Salary</th>";
-                                        echo "<th>Sexe</th>";
-                                        echo "<th>Contact</th>";
-                                        echo "<th>Password</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['username'] . "</td>";
-                                        echo "<td>" . $row['address'] . "</td>";
-                                        echo "<td>" . $row['salary'] . "</td>";
-                                        echo "<td>" . $row['sexe'] . "</td>";
-                                        echo "<td>" . $row['tel'] . "</td>";
-                                        echo "<td>" . "<div class=\"mdp\">".$row['password'] ."</div> <span class=\"biger\">******</span>" . "<div class=\"postionEye\"><i class=\"fa fa-eye\" onclick=\"showPassword(this)\"></i></div> " . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
-                            echo "</table>";
-                            // Free result set
-                            mysqli_free_result($result);
-                        } else{
-                            echo "<p class='lead'><em>No records were found.</em></p>";
-                        }
-                    } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                    }
- 
-                    // Close connection
-                    mysqli_close($link);
-                    ?>
+<?php 
+
+    $title ="CRUD";
+    include "header.php";
+
+?>
+
+
+    <section class="indexsection vh-100 mt-4">
+        <div class="container h-100">
+            <div class="row h-100 pt-depart-relative">
+                <div class="bg-gif col-4 go-down-positon">
+
                 </div>
-            </div>        
+                <div class="col-8 center-item-column">
+                    <h1 class="title grow-up-text">BIENVENUE DANS CRUD</h1>
+                    <h1 class="subtitle grow-down-title">"votre meilleur outil dans le domaine des ressources humaines"</h1>
+                </div>
+                <div class="masque"></div>
+            </div>
+        </div>
+    </section>
+    <div class="sectionservice container">
+        <h1 class="text-lg-center shadow subtitle color-link grow-up-text mt-4">NOS SERVICES</h1>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col card mb-3 align-items-center justify-content-center" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="access.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Accessibilité</h5>
+                            <p class="card-text">Nous fournissons un service accessible à tous, avec un site web totalement conçue pour être le pluis intuitive possible</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col card mb-3 align-items-center justify-content-center" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4 center-item-column">
+                            <img src="security.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Sécurité</h5>
+                            <p class="card-text">Nous sommes encore en phase de développement, mais une fois le projet totalement fnis nous pourrions garantir une sécurité sans failles sur vos données personnelles.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</body>
-<script>
 
-    function showPassword(icon) { 
-    const row = icon.closest("tr"); 
-    const mdp = row.querySelector(".mdp"); 
-    const txt = row.querySelector(".biger"); 
-
-    mdp.classList.toggle("show");
-    txt.classList.toggle("showdown");
-}
-   
-</script>
-</html>
+<?php include_once "footer.php"; ?>
